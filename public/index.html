@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multiplayer Tic Tac Toe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h2>Multiplayer Tic Tac Toe</h2>
+
+<div class="room-controls">
+  <input type="text" id="roomIdInput" placeholder="Enter Room ID" />
+  <button onclick="createRoom()">Create Room</button>
+  <button onclick="joinRoom()">Join Room</button>
+</div>
+
+<div class="player-inputs">
+  <input type="text" id="playerXName" placeholder="Player 1 (X) Name" />
+  <input type="text" id="playerOName" placeholder="Player 2 (O) Name" />
+</div>
+
+<p id="status" class="status-bar">Waiting...</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col" id="0" onclick="handleClick(this)"></div>
+    <div class="col" id="1" onclick="handleClick(this)"></div>
+    <div class="col" id="2" onclick="handleClick(this)"></div>
+  </div>
+  <div class="row">
+    <div class="col" id="3" onclick="handleClick(this)"></div>
+    <div class="col" id="4" onclick="handleClick(this)"></div>
+    <div class="col" id="5" onclick="handleClick(this)"></div>
+  </div>
+  <div class="row">
+    <div class="col" id="6" onclick="handleClick(this)"></div>
+    <div class="col" id="7" onclick="handleClick(this)"></div>
+    <div class="col" id="8" onclick="handleClick(this)"></div>
+  </div>
+</div>
+
+<div class="Scores">
+  <div class="score" id="scoreX">Player 1: 0</div>
+  <div class="score" id="scoreDraw">TIE: 0</div>
+  <div class="score" id="scoreO">Player 2: 0</div>
+  <button id="resetButton" onclick="resetGame()">Reset</button>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
